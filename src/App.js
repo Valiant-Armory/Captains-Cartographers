@@ -1,11 +1,16 @@
 import './App.css';
+import {useState} from "react"
 import Login from "./components/login/login"
-import Header from "./components/header/header"
+import LandingPage from "./components/landingPage/LandingPage"
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
   return (
-    <div className="test" >
-      <Login/>
+    <div  >
+      {isLoggedIn ? <LandingPage/> : 
+       <Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+      }
+      
     </div>
   );
 }

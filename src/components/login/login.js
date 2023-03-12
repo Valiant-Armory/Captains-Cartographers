@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import './login.css';
 import logoMain from "../assets/Logo_1.png"
 
-function Login() {
+function Login(props) {
+  const {
+    isLoggedIn,
+    setIsLoggedIn
+  } = props
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -15,7 +19,7 @@ function Login() {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    setIsLoggedIn(true)
     console.log(`Username: ${username} Password: ${password}`);
   };
 
@@ -27,7 +31,7 @@ function Login() {
         <input type="text" id="username" value={username} onChange={handleUsernameChange} />
         <label htmlFor="password">Password:</label>
         <input type="password" id="password" value={password} onChange={handlePasswordChange} />
-        <button className="submit-button">Submit</button>
+        <button className="submit-button" onClick={handleSubmit}>Submit</button>
     </div>
   );
 }
