@@ -1,5 +1,17 @@
-.main-page-header {
-  background-image: url('../assets//Header\ 1.png');
+.main-page-header-img {
+  background-image: url('../assets//Header\ 2.png');
   background-size: 100% auto;
-  height: 300px;
+  height: 150px;
+}
+
+
+.main-page-header-nav {
+  display: flex;
+  justify-content: center;
+}
+
+.main-page-header-nav button {
+  margin: 0 10px;
+  /* Add this margin property */
+  transform: translateY(120px);
 }
