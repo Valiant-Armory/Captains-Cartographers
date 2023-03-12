@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './login.css';
-import logImage from "../../../public/images/log"
+import logoMain from "../assets/Logo_1.png"
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -21,13 +21,13 @@ function Login() {
 
   return (
     <div className="login">
-      <img src={logoImage} alt="Logo" className="logo" />
-        <h2>Login</h2>
+      <img src={logoMain} alt="Logo" className="small-logo" />
+        <h1>Login</h1>
         <label htmlFor="username">Username:</label>
         <input type="text" id="username" value={username} onChange={handleUsernameChange} />
         <label htmlFor="password">Password:</label>
         <input type="password" id="password" value={password} onChange={handlePasswordChange} />
-        <button >Submit</button>
+        <button className="submit-button">Submit</button>
     </div>
   );
 }
